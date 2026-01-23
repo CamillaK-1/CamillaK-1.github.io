@@ -1,6 +1,32 @@
 html{
-    font-family: serif;
-    background: rgb(253, 254, 246);
+    font-family: Lato;
+    background: rgb(254, 255, 247);
     margin: 0;
+}
+.header {
+  background-color: #E5A9A9 ;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.header a {
+  float: left;
+  color: #f6f5ea;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 19px;
+}
+
+/* Change the color of links on hover */
+.header a:hover {
+  background-color: #E6748E;
+  color: #f6f5ea;
+}
+
+/* Add a color to the active/current link */
+.header a.active {
+  background-color: #E6748E;
+  color: white;
 }
 
