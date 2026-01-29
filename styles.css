@@ -135,7 +135,7 @@ body {
   animation: float 3s ease-in-out infinite;
 }
 
-.animation-butterfly {
+.animated-butterfly {
   top: 25%;
   right: 12%;
   width: 100px;
