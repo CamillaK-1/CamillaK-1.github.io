@@ -38,7 +38,7 @@ body {
   left: 0;
   right: 0;
   display: flex;
-  /* z-index: 1000; */
+  z-index: 1000; 
   justify-content: center;
 }
 
@@ -66,13 +66,15 @@ body {
 
 
 .animated-mirror {
-    width: 200px;
+    width: 230px;
     height: auto;
+    position: absolute;
     /* Apply the animation */
     animation-name: moveAndRotate;
     animation-duration: 5s; /* How long the animation takes */
     animation-iteration-count: 1; /* Keeps the animation repeating */
     animation-fill-mode: forwards;
+    z-index: 10;
 }
 /* Define the keyframes for the animation */
 @keyframes moveAndRotate {
@@ -95,10 +97,13 @@ body {
 
 .cursive-title {
   font-family: cursive;
-  font-size: 6rem;
+  font-size: 7rem;
   color: var(--dark-pink);
   margin-bottom: 1rem;
-  animation: draw 2s ease-in-out;
+  animation: draw 5s ease-in-out;
+  justify-content: center; 
+  align-items: center;
+  display: flex;
 }
 @keyframes draw {
   from {
@@ -115,33 +120,56 @@ body {
   font-size: 3rem;
   color: var(--light-pink);
   font-weight: 400;
+  justify-content: center; 
+  align-items: center;
+  display: flex;
+  animation: draw 5s ease-in-out;
+}
+@keyframes draw {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .hero {
-  min-height: 100vh;
+  height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--color-sage);
+  background-color: var(--cream);
   position: relative;
-  padding-top: 60px;
+  padding-top: 300px;
+
+}
+@media only screen and (max-width: 768px) {
+  .hero {
+    height: 300px; 
+  }
 }
 
+
 .animated-ribbon {
-  top: 20%;
-  left: 10%;
-  width: 100px;
+  width: 500px;
   height: auto;
   animation: float 3s ease-in-out infinite;
+  z-index: 1;
+  padding-left: 200px;
+  padding-bottom: 200px;
+  position: absolute;
+
 }
 
 .animated-butterfly {
-  top: 25%;
-  right: 12%;
-  width: 100px;
+  width: 300px;
   height: auto;
-  color: var(--color-cream);
   animation: float 4s ease-in-out infinite;
+  z-index: 1;
+  position: absolute;
+
 }
 
 @keyframes float {
