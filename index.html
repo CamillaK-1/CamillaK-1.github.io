@@ -5,19 +5,133 @@
     <link rel="stylesheet" href="styles.css">
   </head>
 
-  <div class="header">
-    <a class="active" href="#Home">Home</a>
-    <a class="inactive" href="#About">About</a>
-    <a class="inactive" href="#Music">Music</a>  
-    <a class="inactive" href="#Art">Art</a>  
-    <a class="inactive" href="#Travels">Travels</a>  
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#music" class="nav-link">Music</a>
+      <a href="#art" class="nav-link">Art</a>
+      <a href="#travels" class="nav-link">Travels</a>
+    </nav>
+
+    <!-- Decorative Elements -->
+    <div class="decorative-elements">
+      <img src="other elements/Ribbon 1.png" alt="ribbon" class="animated-ribbon">
+      <img src="other elements/butterfly.png" alt="butterfly" class="animated-butterfly">
+      <img src="other elements/Ribbon 3.png" alt="ribbon" class="animated-ribbon3">
+      <img src="other elements/Ribbon 4.png" alt="ribbon" class="animated-ribbon4">
     </div>
 
-  <div class="Home">
-    <h2 id="About me">Home</h2>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <img src="other elements/Hand mirror.png" alt="Moving mirror" class="animated-mirror">
+      <h1 class="cursive-title">About me</h1>
+      <h2 class="main-name">Camilla Kwong</h2>
+    </section>
 
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <h2 class="section-title cursive">About</h2>
+      <div class="about-content">
+        <h3>Let me introduce myself</h3>
+        <p>I am currently a student at the ISF Academy, studying the IB curriculum and graduating in 2028. I enjoy art, music, travelling and more.</p>
+        <p>In this website I will be sharing a bit more about myself, thanks for visiting!</p>
+      </div>
+    </section>
 
-      
- </div>
+    <!-- Music Section -->
+    <section id="music" class="music-section">
+      <h2 class="section-title cursive">Music</h2>
+      <p class="section-subtitle">What I enjoy listening to</p>
+      <div class="cd-player-container">
+        <div class="cd-player">
+          <div class="cd" data-song="0">
+            <div class="cd-inner"></div>
+          </div>
+          <div class="cd" data-song="1">
+            <div class="cd-inner"></div>
+          </div>
+          <div class="cd" data-song="2">
+            <div class="cd-inner"></div>
+          </div>
+        </div>
+        <div class="music-info">
+          <p class="song-title">Click on a CD to play</p>
+          <div class="play-controls">
+            <button class="play-btn">▶</button>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- Art Section -->
+    <section id="art" class="art-section">
+      <h2 class="section-title cursive">Art</h2>
+      <p class="section-subtitle">What I drew or made</p>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="Art/Art 1.jpg" alt ="Artwork 1">
+        </div>
+        <div class="gallery-item">
+          <img src="Art/Art 2.png" alt="Artwork 2">
+        </div>
+        <div class="gallery-item">
+          <img src="Art/Art 3.png" alt="Artwork 3">
+        </div>
+        <div class="gallery-item">
+          <img src="Art/Art 4.png" alt="Artwork 4">
+        </div>
+        <div class="gallery-item">
+          <img src="Art/Art 5.png" alt="Artwork 5">
+        </div>
+      </div>
+    </section>
+
+    <!-- Travels Section -->
+    <section id="travels" class="travels-section">
+      <h2 class="section-title cursive">Travels</h2>
+      <p class="section-subtitle">Where I've been</p>
+      <div class="gallery travel-gallery">
+        <div class="gallery-item">
+          <img src="" alt="Travel destination 1">
+        </div>
+        <div class="gallery-item">
+          <img src="" alt="Travel destination 2">
+        </div>
+        <div class="gallery-item">
+          <img src="" alt="Travel destination 3">
+        </div>
+        <div class="gallery-item">
+          <img src="" alt="Travel destination 4">
+        </div>
+        <div class="gallery-item">
+          <img src="" alt="Travel destination 5">
+        </div>
+        <div class="gallery-item">
+          <img src="" alt="Travel destination 6">
+        </div>
+        <div class="gallery-item">
+          <img src="" alt="Travel destination 7">
+        </div>
+        <div class="gallery-item">
+          <img src="" alt="Travel destination 8">
+        </div>
+        <div class="gallery-item">
+          <img src="" alt="Travel destination 9">
+        </div>
+        <div class="gallery-item">
+          <img src="" alt="Travel destination 10">
+        </div>
+        <div class="gallery-item">
+          <img src="" alt="Travel destination 11">
+        </div>
+        <div class="gallery-item">
+          <img src="" alt="Travel destination 12">
+        </div>
+      </div>
+    </section>
+
+    <script type="module" src="/main.js"></script>
+  </body>
 </html>

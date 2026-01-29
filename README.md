@@ -12,3 +12,9 @@ My personal site.
 
 - https://www.w3schools.com/howto/howto_js_topnav.asp -create top banner
 
+- https://www.w3schools.com/css/css_z-index.asp#:~:text=%E2%9D%AE%20Previous%20Next%20%E2%9D%AF,position:%20absolute;-order the navbar on top
+
+- https://stackoverflow.com/questions/66618076/css-keyframe-translatex-and-rotatey-on-both-ends#:~:text=I%20finally%20figured%20out%20how,411%2010 - animation for mirror
+
+- 
+
