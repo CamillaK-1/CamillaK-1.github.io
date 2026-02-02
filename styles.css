@@ -24,10 +24,10 @@ body {
 html{
   scroll-behavior: smooth;
 }
+
 /* Nav Bar Section */
 .navbar {
-  background-color: #E5A9A9;
-  overflow: hidden;
+  background-color: var(--light-pink);
   position: fixed;
   padding: 0.5rem 0.5rem;
   top: 0;
@@ -35,17 +35,17 @@ html{
   right: 0;
   display: flex;
   z-index: 1000; 
+  gap: 1rem;
   justify-content: center;
-  font-family: var(--font-body);
 }
 
 /* Style links inside the navigation bar */
 .navbar a {
-  float: left;
   color: #f6f5ea;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  border-radius: 8px;
   font-size: 22px;
 }
 
@@ -58,6 +58,48 @@ html{
 
 /* Hero Section */
 
+/* Overall layout of hero section */
+.hero {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-top: 280px;
+
+}
+/* Animation and custimization of title */
+.cursive-title {
+  font-family: var(--font-cursive);
+  font-size: 11rem;
+  color: var(--dark-pink);
+  margin-bottom: -40px;
+  animation: draw 5s ease-in-out;
+  justify-content: center; 
+  align-items: center;
+  display: flex;
+}
+.main-name {
+  font-size: 5rem;
+  color: var(--light-pink);
+  font-weight: 400;
+  justify-content: center; 
+  align-items: center;
+  display: flex;
+  animation: draw 5s ease-in-out;
+}
+
+/* Key frames definition (for cursive and main name animation) */
+@keyframes draw {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /* Animation for mirror */
 .animated-mirror {
     width: 230px;
@@ -92,51 +134,7 @@ html{
         opacity: 0;
     }
 }
-/* Animation and custimization of title */
-.cursive-title {
-  font-family: var(--font-cursive);
-  font-size: 11rem;
-  color: var(--dark-pink);
-  margin-bottom: -40px;
-  animation: draw 5s ease-in-out;
-  justify-content: center; 
-  align-items: center;
-  display: flex;
-}
-.main-name {
-  font-family: var(--font-body);
-  font-size: 5rem;
-  color: var(--light-pink);
-  font-weight: 400;
-  justify-content: center; 
-  align-items: center;
-  display: flex;
-  animation: draw 5s ease-in-out;
-}
 
-/* Key frames definition (for cursive and main name animation) */
-@keyframes draw {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Overall layout of hero section */
-.hero {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--cream);
-  position: relative;
-  padding-top: 280px;
-
-}
 
 /* Additional animations as decoration */
 .animated-ribbon {
@@ -160,7 +158,6 @@ html{
   right: 150px;
 
 }
-
 @keyframes float {
   0%, 100% {
     transform: translateY(0px);
@@ -224,13 +221,59 @@ html{
 
 /* Music section */
 .music-section {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
   padding-top: 170px;
+  position: relative;
 }
+
+.song-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin: 30px 0 40px;
+}
+
+.song-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.song-item span {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+  font-weight: normal;
+  color: var(--dark-pink);
+}
+
+.cd-wrapper {
+  width: 130px;
+  height: 130px;
+}
+
+.CD {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.animated-music {
+  width: 600px;
+  height: auto;
+  animation: float 3s ease-in-out infinite;
+  z-index: 1;
+  padding-left: 400px;
+  position: absolute;
+
+}
+
 /* Art section */
 .art-section {
   height: 100vh;
@@ -243,34 +286,34 @@ html{
 
 .scroll-container {
   width: 100%;
-  overflow: hidden; 
-  white-space: nowrap; 
-  box-sizing: border-box;
-  cursor: pointer;
+  overflow: hidden;
+  margin: 2rem 0;
+  padding: 1.2rem 0;
 }
 
-.gallery {
-  display: inline-block; 
-  animation: scroll-left 35s linear infinite; 
+.gallery-track {
+  display: inline-flex;
+  gap: 1.8rem;
+  animation: scroll-left 42s linear infinite;
+  will-change: transform;
+  overflow: visible
 }
 
-.gallery img {
-  padding-top: 30px;
-  height: 440px; 
-  width: auto; 
-  flex-shrink: 0;
+.gallery-track img {
+  height: clamp(220px, 42vw, 380px);  
+  width: auto;
   object-fit: cover;
-  transition: transform 0.4s ease; 
-  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(52, 49, 49, 0.1);
 }
 
-.scroll-container:hover .gallery {
+.gallery-track img:hover {
+  transform: scale(1.2) translateY(-15px);
+  z-index: 5;
+}
+
+.scroll-container:hover .gallery-track {
   animation-play-state: paused;
-}
-
-.scroll-container:hover .gallery img:hover {
-  transform: scale(1.2) translateY(-12px);
-  z-index: 10;
 }
 
 @keyframes scroll-left {
@@ -298,6 +341,7 @@ html{
   position: absolute;
 }
 
+/* Travel Section */
 .travels-section {
   min-height: 100vh;
   display: flex;
@@ -307,55 +351,7 @@ html{
   padding-top: 80px;
 }
 
-.scroll-container:hover .gallery-items1 {
-  animation-play-state: paused;
-}
-
-.scroll-container:hover .gallery-items1 img:hover {
-  transform: scale(1.2) translateY(-12px);
-  z-index: 10;
-}
-.gallery-items1 {
-  display: inline-block; 
-  animation: scroll-left 35s linear infinite; 
-}
-
-.gallery-items1 img {
-  padding-top: 20px;
-  height: 270px; 
-  width: auto; 
-  flex-shrink: 0;
-  object-fit: cover;
-  transition: transform 0.4s ease; 
-  margin: 10px;
-}
-.scroll-container:hover .gallery-items2 {
-  animation-play-state: paused;
-}
-
-.scroll-container:hover .gallery-items2 img:hover {
-  transform: scale(1.2) translateY(-12px);
-  z-index: 10;
-}
-.gallery-items2 {
-  animation: scroll-left 30s linear infinite; 
-}
-
-.gallery-items2 img {
-  padding-top: 10px;
-  height: 250px; 
-  width: auto; 
-  flex-shrink: 0;
-  object-fit: cover;
-  transition: transform 0.4s ease; 
-  margin: 10px;
-}
-
-
-
-
 @media (max-width: 767px) {
-
   .cursive-title {
   font-size: 8rem;
 }
@@ -376,18 +372,7 @@ html{
   padding-top: 220px;
 
 }
-.gallery img {
-  height: 300px; 
-  width: auto; 
+  .animated-mirror {
+    width: 130px;
 }
-.gallery-items1 img {
-  height: 200px; 
-  width: auto; 
-}
-.gallery-items2 img {
-  height: 200px; 
-  width: auto; 
-}
-
-
 }
