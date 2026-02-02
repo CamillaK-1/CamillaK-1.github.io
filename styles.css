@@ -3,15 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+/* Declare Variables (colors and fonts) */
 :root {
-  --teal: #6BB1AD;
-  --gray-blue: #A7BCBD;
   --cream: #EDECDB;
   --light-pink: #E5A9A9;
   --lighter-pink: #fcd0d0;
   --dark-pink: #E6748E;
-
 
   --font-cursive: 'Alex Brush', cursive;
   --font-body: 'Lora', sans-serif;
@@ -23,10 +20,11 @@ body {
   background-color: var(--cream);
   overflow-x: hidden;
 }
+
 html{
   scroll-behavior: smooth;
 }
-
+/* Nav Bar Section */
 .navbar {
   background-color: #E5A9A9;
   overflow: hidden;
@@ -41,7 +39,7 @@ html{
   font-family: var(--font-body);
 }
 
-/* Style the links inside the navigation bar */
+/* Style links inside the navigation bar */
 .navbar a {
   float: left;
   color: #f6f5ea;
@@ -55,23 +53,19 @@ html{
 .navbar a:hover {
   background-color: #E6748E;
   color: #f6f5ea;
+  cursor: pointer;
 }
 
-/* Add a color to the active/current link */
-.navbar a.active {
-  background-color: #E6748E;
-  color: white;
-}
+/* Hero Section */
 
-
+/* Animation for mirror */
 .animated-mirror {
     width: 230px;
     height: auto;
     position: absolute;
-    /* Apply the animation */
     animation-name: moveAndRotate;
-    animation-duration: 5s; /* How long the animation takes */
-    animation-iteration-count: 1; /* Keeps the animation repeating */
+    animation-duration: 5s; 
+    animation-iteration-count: 1; 
     animation-fill-mode: forwards;
     z-index: 10;
 }
@@ -98,7 +92,7 @@ html{
         opacity: 0;
     }
 }
-
+/* Animation and custimization of title */
 .cursive-title {
   font-family: var(--font-cursive);
   font-size: 11rem;
@@ -108,16 +102,6 @@ html{
   justify-content: center; 
   align-items: center;
   display: flex;
-}
-@keyframes draw {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 .main-name {
   font-family: var(--font-body);
@@ -129,6 +113,20 @@ html{
   display: flex;
   animation: draw 5s ease-in-out;
 }
+
+/* Key frames definition (for cursive and main name animation) */
+@keyframes draw {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Overall layout of hero section */
 .hero {
   height: 100vh;
   width: 100%;
@@ -140,6 +138,7 @@ html{
 
 }
 
+/* Additional animations as decoration */
 .animated-ribbon {
   width: 480px;
   height: auto;
@@ -171,18 +170,20 @@ html{
   }
 }
 
+/* Applies to all other sections/pages */
 .section-title {
-  font-size: 4rem;
+  font-size: 5rem;
   margin-bottom: 1rem;
   text-align: center;
   font-family:var(--font-cursive);
   color: var(--dark-pink);
 }
 .section-subtitle {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: var(--light-pink);
 }
 
+/* About section */
 .about-section {
   height: 100vh;
   position: relative;
@@ -198,6 +199,7 @@ html{
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
 }
 
 .about-content h3 {
@@ -220,21 +222,16 @@ html{
   position: absolute;
 }
 
+/* Music section */
 .music-section {
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  padding-top: 180px;
+  padding-top: 170px;
 }
-
-.music-section h3 {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  color: #333;
-}
-
+/* Art section */
 .art-section {
   height: 100vh;
   display: flex;
@@ -249,22 +246,31 @@ html{
   overflow: hidden; 
   white-space: nowrap; 
   box-sizing: border-box;
+  cursor: pointer;
 }
 
 .gallery {
   display: inline-block; 
-  animation: scroll-left 20s linear infinite; 
+  animation: scroll-left 35s linear infinite; 
 }
 
 .gallery img {
-  height: 500px; 
+  padding-top: 30px;
+  height: 440px; 
   width: auto; 
-  margin: 0 5px; 
-  transition: transform 0.3s ease; 
+  flex-shrink: 0;
+  object-fit: cover;
+  transition: transform 0.4s ease; 
+  margin: 10px;
 }
 
 .scroll-container:hover .gallery {
   animation-play-state: paused;
+}
+
+.scroll-container:hover .gallery img:hover {
+  transform: scale(1.2) translateY(-12px);
+  z-index: 10;
 }
 
 @keyframes scroll-left {
@@ -272,13 +278,116 @@ html{
     transform: translateX(0); 
   }
   100% {
-    transform: translateX(-100%); 
+    transform: translateX(-50%); 
   }
+}
+.animated-flower {
+  width: 870px;
+  height: auto;
+  animation: float 3s ease-in-out infinite;
+  z-index: -1;
+  padding-right: 600px;
+  position: absolute;
+}
+.animated-flower1 {
+  width: 960px;
+  height: auto;
+  animation: float 2.8s ease-in-out infinite;
+  z-index: -1;
+  padding-left: 800px;
+  position: absolute;
+}
+
+.travels-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-top: 80px;
+}
+
+.scroll-container:hover .gallery-items1 {
+  animation-play-state: paused;
+}
+
+.scroll-container:hover .gallery-items1 img:hover {
+  transform: scale(1.2) translateY(-12px);
+  z-index: 10;
+}
+.gallery-items1 {
+  display: inline-block; 
+  animation: scroll-left 35s linear infinite; 
+}
+
+.gallery-items1 img {
+  padding-top: 20px;
+  height: 270px; 
+  width: auto; 
+  flex-shrink: 0;
+  object-fit: cover;
+  transition: transform 0.4s ease; 
+  margin: 10px;
+}
+.scroll-container:hover .gallery-items2 {
+  animation-play-state: paused;
+}
+
+.scroll-container:hover .gallery-items2 img:hover {
+  transform: scale(1.2) translateY(-12px);
+  z-index: 10;
+}
+.gallery-items2 {
+  animation: scroll-left 30s linear infinite; 
+}
+
+.gallery-items2 img {
+  padding-top: 10px;
+  height: 250px; 
+  width: auto; 
+  flex-shrink: 0;
+  object-fit: cover;
+  transition: transform 0.4s ease; 
+  margin: 10px;
 }
 
 
 
+
 @media (max-width: 767px) {
+
+  .cursive-title {
+  font-size: 8rem;
+}
+  .main-name {
+  font-size: 3rem;
+  font-weight: 300;
+}
+  .animated-ribbon {
+  width: 180px;
+  height: auto;
+  padding-left: 20px;
+  padding-top: 220px;
+}
+  .animated-butterfly {
+  width: 180px;
+  height: auto;
+  right: 20px;
+  padding-top: 220px;
+
+}
+.gallery img {
+  height: 300px; 
+  width: auto; 
+}
+.gallery-items1 img {
+  height: 200px; 
+  width: auto; 
+}
+.gallery-items2 img {
+  height: 200px; 
+  width: auto; 
+}
 
 
 }
