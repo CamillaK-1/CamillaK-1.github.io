@@ -283,7 +283,7 @@ html{
   position: relative;
   padding-top: 130px;
 }
-
+/* Scrolling feature (applied to both art and travel section) */
 .scroll-container {
   width: 100%;
   overflow: hidden;
@@ -294,7 +294,7 @@ html{
 .gallery-track {
   display: inline-flex;
   gap: 1.8rem;
-  animation: scroll-left 42s linear infinite;
+  animation: scroll-left 40s linear infinite;
   will-change: transform;
   overflow: visible
 }
@@ -324,6 +324,7 @@ html{
     transform: translateX(-50%); 
   }
 }
+
 .animated-flower {
   width: 870px;
   height: auto;
@@ -351,6 +352,7 @@ html{
   padding-top: 80px;
 }
 
+/* Smalelr screen layout */
 @media (max-width: 767px) {
   .cursive-title {
   font-size: 8rem;
